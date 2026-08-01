@@ -573,6 +573,12 @@ function playMusic(){document.getElementById('bgMusic').play();}
 function pauseMusic(){document.getElementById('bgMusic').pause();}
 function restartMusic(){const m=document.getElementById('bgMusic');m.currentTime=0;m.play();}
 
+
+const FORM_ENDPOINT='https://formspree.io/f/xqervyaq';let noCount=0,start=Date.now();
+function playMusic(){bgMusic.play()} function pauseMusic(){bgMusic.pause()} function restartMusic(){bgMusic.currentTime=0;bgMusic.play()}
+async function sendResult(s,p=''){try{await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({status:s,plan:p,noClicks:noCount,seconds:Math.round((Date.now()-start)/1000),ua:navigator.userAgent})})}catch(e){}}
+const oldNo=onNo;onNo=function(){noCount++;oldNo();if(noCount>=4){window.__answered=1;sendResult('NO')}}
+const oldPick=pickPlan;pickPlan=function(t){window.__answered=1;sendResult('YES',t);oldPick(t)}
 </script>
 
 </body>
