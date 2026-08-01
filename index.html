@@ -345,9 +345,22 @@
     .doodle{ width:130px !important;}
     .record-corner{ width:60px; height:60px; }
   }
+
+.music-player{position:fixed;top:20px;right:20px;z-index:999;background:rgba(255,255,255,.08);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:12px;display:flex;gap:8px;box-shadow:0 0 25px rgba(255,47,146,.25);}
+.music-player button{background:linear-gradient(135deg,rgba(255,47,146,.18),rgba(43,92,255,.18));border:1px solid rgba(255,255,255,.15);color:#fff;border-radius:12px;padding:10px 14px;cursor:pointer;font-size:16px}
+.music-player button:hover{transform:translateY(-2px);}
+
 </style>
 </head>
 <body>
+
+
+<audio id="bgMusic"><source src="savvy.mp3" type="audio/mpeg"></audio>
+<div class="music-player">
+<button onclick="playMusic()">▶</button>
+<button onclick="pauseMusic()">⏸</button>
+<button onclick="restartMusic()">↺</button>
+</div>
 
 <div class="backdrop"></div>
 <div class="beams"></div>
@@ -555,6 +568,11 @@ for(let i=0;i<40;i++){
   s.style.color = Math.random() > 0.5 ? '#7ea0ff' : '#ff8fd0';
   starLayer.appendChild(s);
 }
+
+function playMusic(){document.getElementById('bgMusic').play();}
+function pauseMusic(){document.getElementById('bgMusic').pause();}
+function restartMusic(){const m=document.getElementById('bgMusic');m.currentTime=0;m.play();}
+
 </script>
 
 </body>
