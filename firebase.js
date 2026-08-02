@@ -6,12 +6,12 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_ID",
-  appId: "YOUR_APP_ID"
+   apiKey: "AIzaSyBmNN2HlG2s80_HrSKxN4bcdC38FEZdATg",
+  authDomain: "hang-812ee.firebaseapp.com",
+  projectId: "hang-812ee",
+  storageBucket: "hang-812ee.firebasestorage.app",
+  messagingSenderId: "862446639120",
+  appId: "1:862446639120:web:61114e3cd551801ea01295"
 };
 
 const app = initializeApp(firebaseConfig);
