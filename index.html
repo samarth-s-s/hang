@@ -580,6 +580,6 @@ async function sendResult(s,p=''){try{await fetch(FORM_ENDPOINT,{method:'POST',h
 const oldNo=onNo;onNo=function(){noCount++;oldNo();if(noCount>=4){window.__answered=1;sendResult('NO')}}
 const oldPick=pickPlan;pickPlan=function(t){window.__answered=1;sendResult('YES',t);oldPick(t)}
 </script>
-
+<script type="module" src="firebase.js"></script>
 </body>
 </html>
